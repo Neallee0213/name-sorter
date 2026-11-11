@@ -1,0 +1,3 @@
+# Keep the shell script runnable on Linux/macOS even if committed from Windows
+name-sorter text eol=lf
+*.cmd text eol=crlf

@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# Runs the name sorter. Build first with: mvn package
+# Usage: ./name-sorter ./unsorted-names-list.txt
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+JAR="$SCRIPT_DIR/target/name-sorter.jar"
+
+if [ ! -f "$JAR" ]; then
+  echo "Jar not found at $JAR. Run 'mvn package' first." >&2
+  exit 1
+fi
+
+exec java -jar "$JAR" "$@"
